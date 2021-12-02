@@ -1,0 +1,476 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* general styles */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+.fixed-btn {
+    position: fixed;
+    z-index: 99;
+    padding: 1rem;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: rgba(234,84,51,0.9);
+    height: 5rem;
+    width: 5rem;
+    border-radius: .4rem;
+    color: white;
+    border: 0;
+}
+.fixed-btn:hover {
+    background-color: rgba(234,84,51,0.7);
+}
+.fixed-btn a i {
+    color: white;
+    font-size: 2rem;
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* custom styles */
+
+
+
+/* header section */
+.header {
+    padding: 1.2rem 0;
+}
+.header div div {
+    width: 12%;
+}
+.header div div a {
+    color: rgba(100,86,82,1);
+    font-size: 4.8rem;
+    font-weight: 750;
+    text-decoration: none;
+}
+.header div nav {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header div nav a {
+    color: rgba(100,86,82,0.7);
+    font-size: 1.6rem;
+    font-weight: 550;
+    text-decoration: none;
+    margin-left: 4rem;
+    padding: 1rem 0;
+}
+.bars {
+    display: none;
+}
+#toggle {
+    display: none;
+}
+.drop-downbox {
+    position: relative;
+    padding: 1rem 0;
+}
+.dropdown-absolute {
+    background: rgba(255,255,255,1);
+    box-shadow: 0rem .3rem .8rem rgba(0,0,0,0.3);
+    position: absolute;
+    z-index: 1;
+    top: 3.6rem;
+    border-radius: .6rem;
+    left: 50%;
+    transform: translateX(-35%);
+    padding: 1rem 2rem;
+    width: 18rem;
+    display: none;
+    
+}
+.dropdown-absolute li {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.2rem 0;
+    font-size: 1.6rem;
+}
+.dropdown-absolute li:hover {
+    color: rgba(234,84,51,1);
+}
+.drop-downbox:hover .dropdown-absolute {
+    display: inline-block;
+}
+.submenu-box {
+    position: relative;
+}
+.deepdropdown-absolute {
+    background: rgba(255,255,255,1);
+    box-shadow: 0rem .3rem .8rem rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0rem;
+    border-radius: .6rem;
+    left: 100%;
+    /* transform: translateX(35%); */
+    padding: 1rem 2rem;
+    width: 15rem;
+    display: none;
+}
+.submenu-box:hover .deepdropdown-absolute {
+    display: inline-block;
+}
+.deepdropdown-absolute li {
+    margin: 1.2rem 0;
+    font-size: 1.6rem;
+    color: rgba(88, 47, 36, 1);
+}
+
+.color-fixed:first-child {
+    color: rgba(234,84,51,1);
+} 
+.color-random:hover {
+    color: rgba(234,84,51,1);
+}
+/* blog section */
+
+.blogg-section {
+    background-color: rgba(100,86,82,0.1);
+    padding-top: 10rem;
+}
+.blogg {
+    padding: 3.2rem ;
+    /* display: flex;
+    flex-direction: column; */
+}
+.blogg-1 {
+    font-size: 2.6rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 1.6rem;
+}
+.blogg-1 strong {
+    color: rgba(234,84,51,1);
+}
+.blogg-1 span {
+    margin: 0 .4rem;
+}
+.blogg-2 {
+    font-size: 3.0rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+} 
+
+/* main hero */
+
+.maiin-hero {
+    padding: 5rem 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.carrd-1 {
+    width: 31%;
+    border-radius: .4rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 .3rem .8rem rgba(0,0,0,0.3);
+}
+.imgg {
+    font-size: 0;
+}
+.imgg img {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.carrd-1 h1 {
+    padding: 2rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 650;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.4;
+}
+.carrd-1 h1:hover {
+    color: rgba(234,84,51,1);
+}
+.spann {
+    padding: 0rem 2rem 1.6rem 2rem;
+    color: rgba(0,0,0,0.5);
+    
+} 
+.spann span {
+    font-size: 1.4rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.3);
+}
+.spann i {
+    margin: 0rem .6rem 0 .6rem ;
+    font-size: 1.4rem;
+    color: rgba(0,0,0,0.5);
+}
+.carrd-1 p {
+    padding: 0 2rem 0rem 2rem;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.5);
+}
+.btn-last {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 2rem;
+}
+.btn-last button {
+    border: 0;
+    background-color: rgba(234,84,51,1);
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    padding: 1rem 1.6rem;
+    border-radius: .4rem;
+    font-weight: 650;
+}
+.btn-last button:hover {
+    background-color: rgba(234,84,51,0.7);
+}
+
+/* page swipe section */
+.page-swipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 3.2rem 5rem 3.2rem;
+}
+.left , .number {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 650;
+    color: rgba(0,0,0,0.4);
+    width: 4rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin: .2rem;
+    border-radius: .4rem;
+}
+.bgd-color {
+    background-color: rgba(234,84,51,0.9);
+    color: rgba(255,255,255,0.9);
+}
+.left:hover , .number:hover {
+    background-color: rgba(234,84,51,0.9);
+    color: rgba(255,255,255,0.9);
+} 
+
+/* footer */
+
+.bg-color {
+    background-color: rgba(254,249,247,1);
+}
+.f-p-1 {
+    padding: 5rem 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flexor {
+    width: 13%;
+}
+.flexor div {
+    font-size: 2.6rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 1.6rem;
+}
+h6 {
+    font-size: 2.0rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 1.6rem;
+}
+.flexor p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    /* font-weight: 550; */
+    color: rgba(0,0,0,0.4);
+}
+.flexor p span {
+    display: inline-block;
+    margin-top: 1.6rem ;
+    font-size: 1.3rem;
+}
+.flexor p span strong {
+    font-size: 1.6rem;
+    font-weight: 550;
+    color: rgba(0,0,0,0.6);
+}
+.flexor p span span {
+    display: inline-block;
+}
+.useful-links {
+    width: 13%;
+}
+.useful-links p {
+    font-size: 1.4rem;
+    line-height: 2.4;
+    /* font-weight: 550; */
+    color: rgba(0,0,0,0.4);
+}
+.useful-links p i {
+    color: rgba(234,84,51,0.7); 
+    font-size: 1rem;
+    margin: 0 1rem;   
+}
+.newsletter {
+    width: 30%;
+}
+.newsletter p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    /* font-weight: 550; */
+    color: rgba(0,0,0,0.8);
+    margin-bottom: 3rem;
+}
+.subscribe input {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: inline-block;
+    border: 1px solid rgba(234,84,51,0.9);
+    border-radius: 2.2rem;
+}
+.subscribe input:focus {
+    outline: 0;
+}
+.subscribe {
+    position: relative;
+}
+.subscribe button {
+    border: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0rem;
+    border-radius: 2.2rem;
+    padding: 1rem 2.6rem;
+    font-size: 1.8rem;
+    background-color: rgba(234,84,51,1);
+    color: rgba(255,255,255,1);
+    text-align: center;
+}
+.subscribe button:hover {
+    background-color: rgba(234,84,51,0.8);
+}
+.f-p-2 {
+    padding: 3rem 3.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.copyright {
+    width: 20%;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    /* font-weight: 550; */
+    color: rgba(0,0,0,0.5);
+}
+.black {
+    color: rgba(0,0,0,0.6);
+    font-weight: 550;
+    font-size: 1.4rem;
+}
+.orange-f {
+    color: rgba(234,84,51,0.7);
+    font-weight: 550;
+    font-size: 1.4rem;
+}
+.social-media {
+    display: flex;
+}
+.social-media a {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    text-decoration: none;
+    margin-right: 2.0rem;
+    background-color: rgba(234,84,51,1);
+    border-radius: 50%;
+}
+.social-media a:hover {
+    background-color: rgba(234,84,51,0.8);
+}
+.social-media a i {
+    color: white;
+    font-size: 1.6rem;
+}
